@@ -22,7 +22,7 @@
             }
            
             return string.Join(", ", items
-                .Where(item => !string.IsNullOrEmpty(i))
+                .Where(item => !string.IsNullOrEmpty(item))
                 .Select(item => ToQuotedString(item, quote)));
         }
 
