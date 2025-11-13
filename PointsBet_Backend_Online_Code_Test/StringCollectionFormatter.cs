@@ -10,11 +10,11 @@
       - Fixing typos
       - Any other light-weight optimisation
     */
-    public static class ItemsFormatter
+    public static class StringCollectionFormatter
     {
 
         //Code to improve
-        public static string ToCommaSeparatedQuotedItems(string[] items, string quote)
+        public static string ToCommaSeparatedQuotedString(string[] items, string quote)
         {
             if(!IsValidInput(items, quote))
             {
@@ -23,7 +23,7 @@
            
             return string.Join(", ", items
                 .Where(i => !string.IsNullOrEmpty(i))
-                .Select(i => ToQuotedItem(i, quote)));
+                .Select(i => ToQuotedString(i, quote)));
         }
 
         private static bool IsValidInput(string[] items, string quote)
@@ -31,7 +31,7 @@
             return items != null && items.Length > 0 && !string.IsNullOrEmpty(quote);
         }
 
-        private static string ToQuotedItem(string item, string quote)
+        private static string ToQuotedString(string item, string quote)
         {
             return $"{quote}{item}{quote}";
         }
