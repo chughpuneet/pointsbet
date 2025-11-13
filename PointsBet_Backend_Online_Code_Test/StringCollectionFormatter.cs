@@ -22,8 +22,8 @@
             }
            
             return string.Join(", ", items
-                .Where(i => !string.IsNullOrEmpty(i))
-                .Select(i => ToQuotedString(i, quote)));
+                .Where(item => !string.IsNullOrEmpty(i))
+                .Select(item => ToQuotedString(item, quote)));
         }
 
         private static bool IsValidInput(string[] items, string quote)
